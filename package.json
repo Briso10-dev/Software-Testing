@@ -1,0 +1,14 @@
+{
+  "name": "tp1",
+  "version": "1.0.0",
+  "description": "My secondt test case in INF352",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Briso",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}

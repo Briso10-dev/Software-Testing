@@ -8,7 +8,7 @@ A test script to test the sum of two numbers
 
 **Programming language:** Javascript
 
-**Framework:** Jest
+**Framework:** Vitest
 
 
 ## Installation
@@ -16,7 +16,7 @@ A test script to test the sum of two numbers
 After cloning the project, install Jest framework with npm
 
 ```bash
-  npm install --save-dev jest
+  npm install -D vitest
 ```
     
 ## Running Tests
@@ -24,7 +24,7 @@ After cloning the project, install Jest framework with npm
 To run tests, run the following command
 
 ```bash
-  npx jest
+  npm run test
 ```
 
 
