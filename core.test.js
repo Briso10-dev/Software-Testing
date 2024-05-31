@@ -1,4 +1,4 @@
-import {describe, test, expect} from 'vitest';
+import {describe, test, expect, it} from 'vitest';
 import { isPriceInRange } from './core';
 
 // Boundary Testing
@@ -8,7 +8,7 @@ import { isPriceInRange } from './core';
 // test 1 : doit retourner true si le price est compris entre le min et le max
 // test 4 : doit retourner true si price est egale a min
 // test 1 : doit retourner true si price est egle a max
-// Methode native
+// Methode native: AAA pattern
 // describe('IsPriceRange',()=>{
 //     test("doit retourner false si le price < min",()=>{
 //         // Arrange
@@ -25,20 +25,16 @@ import { isPriceInRange } from './core';
 //     })
 // })
 
+// 1.Parameterized Tests
+
 describe('IsPriceRange',()=>{
-    test("doit retourner false si le price < min",()=>{
-        expect(isPriceInRange(-10,0,100)).toBe(false)
-    });
-    test("doit retourner false si le price > max",()=>{
-        expect(isPriceInRange(110,0,100)).toBe(false)
-    });
-    test("doit retourner true si le price est entre le min et max",()=>{
-        expect(isPriceInRange(20,0,100)).toBe(true)
-    });
-    test("doit retourner true si le price = min",()=>{
-        expect(isPriceInRange(0,0,100)).toBe(true)
-    });
-    test("doit retourner true si le price = max",()=>{
-        expect(isPriceInRange(100,0,100)).toBe(true)
-    });
+    it.each([
+        { scenario: 'price < min', price: -10, min:0, max:100, result:false},
+        { scenario: 'price > max', price: -110, min:0, max:100, result:false},
+        { scenario: 'price entre min et max' , price: 20, min:0, max:100, result:true},
+        { scenario: 'price = min', price: 0, min:0, max:100, result:true},
+        { scenario: 'price = max', price: 100, min:0, max:100, result:true},
+    ])(`doit me retourner $result si $scenario`,({price,min,max,result})=>{
+        expect(isPriceInRange(price,min,max)).toBe(result)
+    })
 })
