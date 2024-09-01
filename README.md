@@ -1,33 +1,28 @@
 
-# Project Title
+# Integration Testing on a RESTAPI
 
-A test script to test the sum of two numbers
-
-
+This shows the implementation of software testing on a RESTAPI design for user management
 ## Tech Stack
 
-**Programming language:** Javascript
+**Server :** Typescript,NodeJS,ExpressJS
 
-**Framework:** Vitest
+**Database :** Mongodb
+
+**Test :** Vitest
 
 
 ## Installation
 
-After cloning the project, install Jest framework with npm
+Install my-project with yarn
 
 ```bash
-  npm install -D vitest
+  yarn install
 ```
-    
-## Running Tests
-
-To run tests, run the following command
+Install the neccessary dependency
 
 ```bash
-  npm run test
-```
-
-
+npm install -D typescript ts-node @types/express @types/node vitest supertest @types/supertest
+```    
 ## Authors
 
 - [@Briso10-dev](https://github.com/Briso10-dev)
